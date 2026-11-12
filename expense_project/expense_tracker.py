@@ -1,4 +1,5 @@
 import os
+import datetime
 from expense import Expense
 
 
@@ -80,12 +81,28 @@ def summarize_expenses(expense_file_path):
             stripped_line = line.strip()
             expense_name, expense_category, expense_amount = stripped_line.split(",")
             print(expense_name, expense_amount, expense_category)
-            line_expense = Expense(expense_name, expense_category, float(expense_amount))
+            line_expense = Expense(
+                name=expense_name, category=expense_category, amount=float(expense_amount))
             expenses.append(line_expense)
 
+    amount_by_category = {}
     for expense in expenses:
-       print(expense)
-       
+        key = expense.category
+        if key in amount_by_category:
+            amount_by_category[key] += expense.amount
+        else: amount_by_category[key] = expense.amount
 
+    print("Expense Summary by Category:")
+    now = datetime.datetime.now()
+    day_of_month = now.day
+    name_of_month = now.strftime("%B")
+    year = now.year
+    print(f"Report for {name_of_month} {day_of_month}, {year}")
+
+    for key, value in amount_by_category.items():
+        print(f"{key}: Total Amount: ${value:.2f}")
+
+   
 if __name__ == "__main__":
     main()
+    
