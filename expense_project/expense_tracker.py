@@ -1,6 +1,8 @@
 import os
+import json
 import datetime
 from expense import Expense
+
 
 
 
@@ -9,6 +11,9 @@ from expense import Expense
 def main():
     print("Welcome to the Expense Tracker!")
     expense_file_path = os.path.join(os.path.dirname(__file__), "expenses.csv")
+    json_file_path = os.path.join(os.path.dirname(__file__), "expenses.json")
+    convert_csv_to_json(expense_file_path, json_file_path)
+
     #Get user input for expense details
     expense = get_user_expense()
 
@@ -21,7 +26,32 @@ def main():
 
     #Read file and summarize expenses
     summarize_expenses(expense_file_path)
-   
+
+    
+def convert_csv_to_json(expense_file_path, json_file_path):
+    expenses = []
+
+    with open(expense_file_path, "r") as f:
+        for line in f:
+            stripped_line = line.strip()
+
+            if not stripped_line:
+                continue
+
+            expense_name, expense_category, expense_amount = stripped_line.split(",")
+
+            expense_data = {
+                "name": expense_name,
+                "category": expense_category,
+                "amount": float(expense_amount)
+            }
+
+            expenses.append(expense_data)
+
+    with open(json_file_path, "w") as f:
+        json.dump(expenses, f, indent=4)
+
+    print("Expenses successfully converted to JSON!")
 
 
 
@@ -105,4 +135,3 @@ def summarize_expenses(expense_file_path):
    
 if __name__ == "__main__":
     main()
-    

@@ -1,0 +1,92 @@
+[
+    {
+        "name": "metro card",
+        "category": "Transport",
+        "amount": 8.0
+    },
+    {
+        "name": "movie ticket",
+        "category": "Entertainment",
+        "amount": 8.0
+    },
+    {
+        "name": "coffee",
+        "category": "Miscellaneous",
+        "amount": 13.0
+    },
+    {
+        "name": "electricity",
+        "category": "Home",
+        "amount": 400.0
+    },
+    {
+        "name": "burger",
+        "category": "Food",
+        "amount": 12.0
+    },
+    {
+        "name": "rent",
+        "category": "Home",
+        "amount": 1490.0
+    },
+    {
+        "name": "water bill",
+        "category": "Home",
+        "amount": 180.0
+    },
+    {
+        "name": "replacement key",
+        "category": "Miscellaneous",
+        "amount": 4.0
+    },
+    {
+        "name": "tire",
+        "category": "Miscellaneous",
+        "amount": 148.0
+    },
+    {
+        "name": "trader joes",
+        "category": "Food",
+        "amount": 30.0
+    },
+    {
+        "name": "bracelet",
+        "category": "Miscellaneous",
+        "amount": 300.0
+    },
+    {
+        "name": "earrings",
+        "category": "Miscellaneous",
+        "amount": 200.0
+    },
+    {
+        "name": "cake",
+        "category": "Food",
+        "amount": 30.0
+    },
+    {
+        "name": "repair for phone",
+        "category": "Miscellaneous",
+        "amount": 400.0
+    },
+    {
+        "name": "nails",
+        "category": "Miscellaneous",
+        "amount": 59.0
+    },
+    {
+        "name": "indian food",
+        "category": "Food",
+        "amount": 30.0
+    },
+    {
+        "name": "dog food",
+        "category": "Miscellaneous",
+        "amount": 50.0
+    },
+    {
+        "name": "cleaner",
+        "category": "Home",
+        "amount": 12.0
+    }
+]

@@ -7,6 +7,7 @@ class Expense:
         self.name = name
         self.category = category
         self.amount = amount
+        
 
  
 #representation?
